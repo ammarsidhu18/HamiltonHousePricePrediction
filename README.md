@@ -43,7 +43,7 @@ After loading the datasets, merging the two datasets, and inspecting the merged 
   
   ![targetdensityplot](https://user-images.githubusercontent.com/46492654/161907581-0d79b2b3-e36a-4ab5-b043-b88b64834e99.png)
   - Box Plot:
-  -
+  
   ![targetboxplot](https://user-images.githubusercontent.com/46492654/161907612-a221d8e8-b335-4d86-bf5b-705e99d74613.png)
   - Removed Outliers through IQR Inspection.
 * Concluded EDA by developing choropleth maps of the spatial data through mapping average house prices per census tract, and average after-tax per census tract:
