@@ -26,9 +26,11 @@ After loading the datasets, merging the two datasets, and inspecting the merged 
   - Histograms:
   ![histograms](https://user-images.githubusercontent.com/46492654/161907277-078d3fe0-012b-41d7-a5de-9f94d80de18f.png) 
   - Density Plots:
+  
   ![densityplots](https://user-images.githubusercontent.com/46492654/161907364-68efcf01-7aca-4d42-bceb-5a6379f0fc01.png)
   - Box Plots:
-![boxplots](https://user-images.githubusercontent.com/46492654/161907429-2c378400-914c-40c9-ade3-399e98855cd0.png)
+  
+  ![boxplots](https://user-images.githubusercontent.com/46492654/161907429-2c378400-914c-40c9-ade3-399e98855cd0.png)
 * Developed bivariate data visualizations comparing all features to each other including the target variable (houseValues):
   - Scatter Plot Matrix:
   ![scattermatrix](https://user-images.githubusercontent.com/46492654/161907475-ce8a547b-1e4b-4cd3-b712-0f35361cb5f7.png)
@@ -38,8 +40,10 @@ After loading the datasets, merging the two datasets, and inspecting the merged 
 * Dropped correlated features to prevent multicollinearity. 
 * Explored target variable through:
   - Density Plot:
+  
   ![targetdensityplot](https://user-images.githubusercontent.com/46492654/161907581-0d79b2b3-e36a-4ab5-b043-b88b64834e99.png)
   - Box Plot:
+  -
   ![targetboxplot](https://user-images.githubusercontent.com/46492654/161907612-a221d8e8-b335-4d86-bf5b-705e99d74613.png)
   - Removed Outliers through IQR Inspection.
 * Concluded EDA by developing choropleth maps of the spatial data through mapping average house prices per census tract, and average after-tax per census tract:
