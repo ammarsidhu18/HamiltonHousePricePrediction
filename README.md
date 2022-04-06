@@ -53,9 +53,48 @@ The 10 models I selected for the regression modelling:
 10. ExtraTreeRegressor()
 
 # Model Perfomance (Machine Learning)
+From the baseline models, the Linear Regression, Lasso Regression, Random Forest Regressor, and Extra Trees Regressor models achieved **R^2 values above 0.7** on the test sets. However, data standardization will be required to get more accurate predictions out of the models as many of the features are not on the same scale.
+
+After **standardizing the features**, significant improvements can be seen in the Elastic Net model while Random Forest Regressor, and Extra Trees Regressor models saw slight improvements. The other models remained unaffected, and SVR performed extremely poorly, so this model will be discarded entirely. 
+
+The KNN, Lasso, Elastic Net, Random Forest, Extra Trees models had their hyperparameters tuned by hand and **RandomizedSearchCV**. The Elastic Net model achieved an R^2 value of ~0.81 and Extra Trees models achieved an R^2 of ~0.79. 
+
+The Elastic Net and Extra Trees models had additional hyperparameters tuned with **GrdiSearchCV** to get the most out of these models and achieve the best possible model accuracy. The best hyperparameters were retained, and we concluded that **Elastic Net provided the best model** with a high R^2 value of ~0.81. The cross-validated metrics were obtained through computing the mean of the model's **RMSE** and **MAE** with 5-folds cross-validation. 
 
 # Feature Importance
+Which features contribute most to a model predicting Hamilton's house prices?
+* monthly_housing_costs and income_after_tax are by far the most important features for determining/predicting Hamilton's house prices. This is likely because people living in larger houses tend to earn more and have more monthly costs. Hence, the house prices are likely to increase or decrease based on the income and monthly housing costs across the city's census tracts (CTUID feature from original dataframe).
+
+* percent_mortage and avg_house_size are the least important features for determining/predicting Hamilton's house prices. Their low coefficient values are likely due to the fact that houses throughout the city have no relationship between how many people are living in them, and their price. Across the census tracts that comprise of the city, there is a large variation between the prices, and the number of people living in the home. Some CTUIDs (census tracts) have lower priced homes with more people living in them while others have less people living in the home, but the house's price is quite high. In addition, mortgage is practically irrelevant to the predicting a house's price as this feature relates more to an individual's income. We cannot make good predictions on a house price given the percentage of individuals with mortgages in a CTUID (census tracts).
+
+
 
 # Spatial Regression Models
+Since we have completed an end-to-end machine learning project on house price prediction for Hamilton, ON, it is now time to dive deeper into the potential insights that a spatial regression model would provide over the machine learning models developed earlier.
 
-# Conclusions
+For the spatial regression modelling, we developed a **baseline OLS model** using PySAL without a spatial weights matrix, which would emphasize a connection between an observation and its n-nearest neighbors.
+
+The model provided a **high R^2 value of ~0.84 (greater than machine learning models)**, and the model was also **statistically significant** based on the p-value of the F-Statistic. 
+
+Developed a spatially lagged exogenous regression model, by spatially lagging the explanatory variable that influences the price of a home at a given location the most. From the baseline OLS model, it was apparent that monthly_housing_costs influences the price of the home most based on the coefficients of the OLS model. 
+
+The spatially lagged model obtained a **slightly higher R^2 (~0.86)** than the baseline OLS model through lagging the monthly housing costs feature. Furthermore, the model was also **statistically significant** based on the p-value of the F-Statistic. 
+
+Generally speaking, house prices are **drived heavily by location**, which is a spatial attribute.
+
+The use of spatial models is likely going to improve prediction accuracy. We will compute the **MSE** as the evaluation metric for the spatial regression models just like the machine learning models to compare their results.
+
+This will explicity determine if spatial models are better than non-spatial machine learning models for house price predictions where spatial attributes play a role in determining house prices.
+
+We can see **no improvement in the MSE** of the spatial OLS model by lagging the best feature and adding a weight matrix, but when we compare the R^2 and adjuated of the spatially lagged OLS model to the OLS without weights or lag, we can see a slightly improvement in model performance.
+
+# Conclusions from Model Comparisons
+
+* The Spatially Lagged OLS model achieved a **higher R^2 (0.85)** than the both the cross-validated Elastic Net model, and the tuned Elastic Net. Although the tuned Elastic Net model achieved an **R^2 value of 0.8**, this was only acquired through exhaustive hyperparameter tuning, and compared with other non-spatial machine learning models. The spatially lagged OLS achieved a 0.85 R^2 with just the addition of a spatially lagged feature (the feature that influenced the house prices the most).
+* The inclusion of **spatially lagged features provides a more accurate model** for house price prediction when space plays a role.
+* Spatial models can provide better predictions than non-spatial machine learning models for house price prediction because house prices are heavily dependent upon location.
+* Therefore, for house price prediction problems, it is a good idea to include **spatial regression models** in addition to the non-spatial machine learning models for prediction. This is because location/geography plays a big role in influencing the prices of homes. Hence, the prices of Hamilton houses across census tracts are **spatially dependent**.
+
+**Limitations in Results:** 
+* The dataset is unfortunately not large enough to reach solid conclusions with accurate predictions. More housing data will be required as well as far more features to truly develop accurate models.
+* In addition, the spatial OLS model was developed using log house prices (target variable) while the machine learning models were not trained and tested on log house prices (the target not transformed using log). This means that we were unable to compare the RMSE, MSE or MAE metrics of the models as they were computed on different scales. Training the machine learning models with log house prices would be the next step to see which models provided lower RMSE and MAE values.
