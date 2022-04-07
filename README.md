@@ -36,7 +36,7 @@ After loading the datasets, merging the two datasets, and inspecting the merged 
   ![scattermatrix](https://user-images.githubusercontent.com/46492654/161907475-ce8a547b-1e4b-4cd3-b712-0f35361cb5f7.png)
   - Heatmap:
   ![heatmap](https://user-images.githubusercontent.com/46492654/161907522-1c0c07dc-b5d8-4bc9-95e6-c98c2623285d.png)
-* The correlation matrix confirms that features priv_dwellings_by_bedroom, priv_dwellings_byrooms and house_by_person_per_room are postively correlated with a 1.0 correlation coefficient. Two of these features will be removed and only one of them will be kept for analysis. Since all features have the same correlation coefficient with the target variable houseValue, keeping the priv_dwellings_byrooms feature makes the most sense as it represents the occupied private homes by the number of rooms per household.
+* The correlation matrix confirms that features priv_dwellings_by_bedroom, priv_dwellings_byrooms and house_by_person_per_room are positively correlated with a 1.0 correlation coefficient. Two of these features will be removed and only one of them will be kept for analysis. Since all features have the same correlation coefficient with the target variable houseValue, keeping the priv_dwellings_byrooms feature makes the most sense as it represents the occupied private homes by the number of rooms per household.
 * Dropped correlated features to prevent multicollinearity. 
 * Explored target variable through:
   - Density Plot:
