@@ -18,7 +18,7 @@
 
 # EDA & Feature Engineering
 After loading the datasets, merging the two datasets, and inspecting the merged dataframe's features (housing attributes) and target variable (house prices), I needed to clean the raw data and visualize it to better understand the relationship between the features, and the target. I did the following steps with the datasets:
-* Founder the number of unique values in the dataset through creating a dictionary. 
+* Found the number of unique values in the dataset through creating a dictionary. 
 * Seperated features and target columns to acquire summary statistics on the continuous features and target variable.
 * Checked for total number of missing values in each column and found that there are **no missing values** in this dataset.
 * Checked for duplicate values in the dataset and found **no duplicate values** in the dataset.
