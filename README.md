@@ -76,7 +76,7 @@ The KNN, Lasso, Elastic Net, Random Forest, Extra Trees models had their hyperpa
 ![knntuning](https://user-images.githubusercontent.com/46492654/161908017-258379bb-855f-4022-916f-a2853cc5ad6c.png)
 The KNN model underperformed despite testing different number of neighbors, so we will drop it from our analysis. 
 
-The Elastic Net and Extra Trees models had additional hyperparameters tuned with **GrdiSearchCV** to get the most out of these models and achieve the best possible model accuracy. The best hyperparameters were retained, and we concluded that **Elastic Net provided the best model** with a high R^2 value of ~0.81. The cross-validated metrics were obtained through computing the mean of the model's **RMSE** and **MAE** with 5-folds cross-validation.
+The Elastic Net and Extra Trees models had additional hyperparameters tuned with **GridSearchCV** to get the most out of these models and achieve the best possible model accuracy. The best hyperparameters were retained, and we concluded that **Elastic Net provided the best model** with a high R^2 value of ~0.81. The cross-validated metrics were obtained through computing the mean of the model's **RMSE** and **MAE** with 5-folds cross-validation.
 ![cvmetrics](https://user-images.githubusercontent.com/46492654/161908074-e9db6c52-2138-4275-b1cc-1ddfadd407ae.png)
 
 # Feature Importance
