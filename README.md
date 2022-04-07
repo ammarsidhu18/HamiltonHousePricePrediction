@@ -106,7 +106,7 @@ The use of spatial models is likely going to improve prediction accuracy. We wil
 
 This will explicitly determine if spatial models are better than non-spatial machine learning models for house price predictions where spatial attributes play a role in determining house prices.
 
-We can see **no improvement in the MSE** of the spatial OLS model by lagging the best feature and adding a weight matrix, but when we compare the R^2 and adjuated of the spatially lagged OLS model to the OLS without weights or lag, we can see a slightly improvement in model performance.
+We can see **no improvement in the MSE** of the spatial OLS model by lagging the best feature and adding a weight matrix, but when we compare the R^2 and adjusted R^2 of the spatially lagged OLS model to the OLS without weights or lag, we can see a slightly improvement in model performance.
 
 # Conclusions from Model Comparisons
 
