@@ -100,11 +100,11 @@ Developed a spatially lagged exogenous regression model, by spatially lagging th
 
 The spatially lagged model obtained a **slightly higher R^2 (~0.86)** than the baseline OLS model through lagging the monthly housing costs feature. Furthermore, the model was also **statistically significant** based on the p-value of the F-Statistic. 
 
-Generally speaking, house prices are **drived heavily by location**, which is a spatial attribute.
+Generally speaking, house prices are **driven heavily by location**, which is a spatial attribute.
 
 The use of spatial models is likely going to improve prediction accuracy. We will compute the **MSE** as the evaluation metric for the spatial regression models just like the machine learning models to compare their results.
 
-This will explicity determine if spatial models are better than non-spatial machine learning models for house price predictions where spatial attributes play a role in determining house prices.
+This will explicitly determine if spatial models are better than non-spatial machine learning models for house price predictions where spatial attributes play a role in determining house prices.
 
 We can see **no improvement in the MSE** of the spatial OLS model by lagging the best feature and adding a weight matrix, but when we compare the R^2 and adjuated of the spatially lagged OLS model to the OLS without weights or lag, we can see a slightly improvement in model performance.
 
