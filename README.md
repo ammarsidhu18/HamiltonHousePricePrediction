@@ -1,7 +1,7 @@
 # Hamilton House Price Prediction: Spatial Regression vs. Machine Learning
 * Created a tool that estimates house prices (**MSE ~ $57070.99, R^2 ~ 0.805**) to help predict house prices by census tract in the city of Hamilton, ON.
 * Created a spatial regression tool that estimates house prices (**R^2 ~ 0.8548, MSE ~ 0.02 on Log transformed data**) based on the location of census tracts in Hamilton, ON.
-* Compared spatial regression modelling to non-spatial machine learning modelling to conclude that **spatial modelling provides stronger models** for house price prediction than non-spatial machine learning models as **geograhic location influences house prices**.
+* Compared spatial regression modelling to non-spatial machine learning modelling to conclude that **spatial modelling provides stronger models** for house price prediction than non-spatial machine learning models as **geographic location influences house prices**.
 
 # Data & Problem
 * **Problem:** The goal of this problem is to compare the prediction accuracy of machine learning regression algorithms to spatial regression algorithms on house pricing data. This is because we wish to see if developing a spatial regression model for house prices would provide more accurate predictions because there appears to be a relationship between location/geography and house prices. In a statement,
